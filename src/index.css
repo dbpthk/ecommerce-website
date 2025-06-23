@@ -1,5 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Dongle:wght@700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mochiy+Pop+P+One&family=Outfit:wght@100..900&family=Permanent+Marker&family=Prata&display=swap");
+
 @import "tailwindcss";
 
 a.active hr {
   display: block;
+}
+
+* {
+  font-family: outfit;
+}
+.prata-regular {
+  font-family: "Prata", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+@media (max-width: 640px) {
+  a.active {
+    background-color: #3b3b3b;
+    color: white;
+  }
 }

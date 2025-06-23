@@ -7,19 +7,21 @@ const Navbar = () => {
 
   return (
     <div className="flex items-center justify-between py-5 font-medium">
-      <img src={assets.logo} className="w-36" alt="brand logo" />
+      <Link to="/">
+        <img src={assets.logo} className="w-36" alt="brand logo" />
+      </Link>
       <ul className="hidden sm:flex gap-5 text-sm text-gray-700">
         <NavLink to="/" className="flex flex-col items-center gap-1">
           <p>HOME</p>
-          <hr className="w-3/4 border-none h-[1.5px] bg-gray-300 hidden" />
+          <hr className="mt-0 w-3/4 border-none h-[1.5px] bg-gray-300 hidden" />
         </NavLink>
         <NavLink to="/collection" className="flex flex-col items-center gap-1">
           <p>COLLECTION</p>
-          <hr className="w-3/4 border-none h-[1.5px] bg-gray-300 hidden" />
+          <hr className="mt-0 w-3/4 border-none h-[1.5px] bg-gray-300 hidden" />
         </NavLink>
         <NavLink to="/about" className="flex flex-col items-center gap-1">
           <p>ABOUT</p>
-          <hr className="w-3/4 border-none h-[1.5px] bg-gray-300 hidden" />
+          <hr className="mt-0 w-3/4 border-none h-[1.5px] bg-gray-300 hidden" />
         </NavLink>
         <NavLink to="/contact" className="flex flex-col items-center gap-1">
           <p>CONTACT</p>
@@ -79,28 +81,28 @@ const Navbar = () => {
           </div>
           <NavLink
             onClick={() => setvisible(false)}
-            className="py-3 pl-6 border-b border-gray-300"
+            className="py-3 pl-6 border-b border-gray-400"
             to="/"
           >
             HOME
           </NavLink>
           <NavLink
             onClick={() => setvisible(false)}
-            className="py-3 pl-6 border-b border-gray-300"
+            className="py-3 pl-6 border-b border-gray-400"
             to="/collection"
           >
             COLLECTION
           </NavLink>
           <NavLink
             onClick={() => setvisible(false)}
-            className="py-3 pl-6 border-b border-gray-300"
+            className="py-3 pl-6 border-b border-gray-400"
             to="/about"
           >
             ABOUT
           </NavLink>
           <NavLink
             onClick={() => setvisible(false)}
-            className="py-3 pl-6  border-b border-gray-300"
+            className="py-3 pl-6  border-b border-gray-400"
             to="/contact"
           >
             CONTACT

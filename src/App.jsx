@@ -14,6 +14,7 @@ const App = () => {
   return (
     <div className="px-4 sm:px-[5v] md:px-[7vw] lg:px-[9vw]">
       <Navbar />
+      <Home />
 
       <Routes>
         <Route path="/home" element={<Home />} />
