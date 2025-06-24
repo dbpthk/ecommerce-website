@@ -1,4 +1,6 @@
 import { Routes, Route } from "react-router-dom";
+import { ErrorBoundary } from "react-error-boundary";
+
 import Home from "./pages/Home";
 import Collection from "./pages/Collection";
 import About from "./pages/About";
@@ -9,25 +11,38 @@ import Login from "./pages/Login";
 import PlaceOrder from "./pages/PlaceOrder";
 import Orders from "./pages/Orders";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 const App = () => {
-  return (
-    <div className="px-4 sm:px-[5v] md:px-[7vw] lg:px-[9vw]">
-      <Navbar />
-      <Home />
+  const NotFound = () => <h1>404 Page Not Found</h1>;
 
-      <Routes>
-        <Route path="/home" element={<Home />} />
-        <Route path="/collection" element={<Collection />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/product/:productId" element={<Product />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/placeorder" element={<PlaceOrder />} />
-        <Route path="/orders" element={<Orders />} />
-      </Routes>
-    </div>
+  return (
+    <>
+      <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/collection" element={<Collection />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/product/:productId" element={<Product />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/placeorder" element={<PlaceOrder />} />
+          <Route path="/orders" element={<Orders />} />
+          <Route path="*" element={<NotFound />} />
+          <Route
+            path="/"
+            element={
+              <ErrorBoundary fallback={<div>Component Crashed</div>}>
+                <Home />
+              </ErrorBoundary>
+            }
+          />
+        </Routes>
+        <Footer />
+      </div>
+    </>
   );
 };
 
