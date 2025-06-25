@@ -16,19 +16,19 @@ const Navbar = () => {
       </Link>
       <ul className="hidden sm:flex gap-5 text-sm text-gray-700">
         <NavLink to="/" className="flex flex-col items-center gap-1">
-          <p>HOME</p>
+          <p className="hover:text-black hover:font-bold">HOME</p>
           <hr className="mt-0 w-3/4 border-none h-[1.5px] bg-gray-300 hidden" />
         </NavLink>
         <NavLink to="/collection" className="flex flex-col items-center gap-1">
-          <p>COLLECTION</p>
+          <p className="hover:text-black hover:font-bold">COLLECTION</p>
           <hr className="mt-0 w-3/4 border-none h-[1.5px] bg-gray-300 hidden" />
         </NavLink>
         <NavLink to="/about" className="flex flex-col items-center gap-1">
-          <p>ABOUT</p>
+          <p className="hover:text-black hover:font-bold">ABOUT</p>
           <hr className="mt-0 w-3/4 border-none h-[1.5px] bg-gray-300 hidden" />
         </NavLink>
         <NavLink to="/contact" className="flex flex-col items-center gap-1">
-          <p>CONTACT</p>
+          <p className="hover:text-black hover:font-bold">CONTACT</p>
           <hr className="w-3/4 border-none h-[1.5px] bg-gray-300 hidden" />
         </NavLink>
       </ul>
