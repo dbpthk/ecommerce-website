@@ -6,9 +6,16 @@ import { assets } from "../assets/frontend_assets/assets.js";
 import CartTotal from "../components/CartTotal.jsx";
 
 const Cart = () => {
-  const { products, currency, cartItems, updateQuantity, navigate } =
-    useContext(ShopContext);
+  const {
+    products,
+    currency,
+    cartItems,
+    updateQuantity,
+    navigate,
+    getCartAmount,
+  } = useContext(ShopContext);
   const [cartData, setCartData] = useState([]);
+  const cartAmount = getCartAmount();
 
   useEffect(() => {
     const tempData = [];
@@ -92,8 +99,13 @@ const Cart = () => {
           <CartTotal />
           <div className="w-full text-end">
             <button
+              disabled={cartAmount === 0}
               onClick={() => navigate("/place-order")}
-              className="bg-black text-white texy-sm my-8 px-8 py-3 cursor-pointer sm:hover:bg-gray-700"
+              className={`bg-black text-white texy-sm my-8 px-8 py-3  ${
+                cartAmount === 0
+                  ? "cursor-not-allowed"
+                  : "cursor-pointer sm:hover:bg-gray-700"
+              }`}
             >
               PROCEED TO CHECKOUT
             </button>
